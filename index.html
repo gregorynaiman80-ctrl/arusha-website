@@ -44,7 +44,7 @@
                     <a href="things-to-do.html" class="btn-explore-v2">
                         Start Exploring
                     </a>
-                    <a href="https://www.youtube.com/watch?v=6m6G_6XkKSc" target="_blank" class="btn-watch-v2">
+                    <a href="#" id="watch-video-btn" class="btn-watch-v2">
                         <span class="play-icon-v2">▶️</span> Watch Video
                     </a>
                 </div>
@@ -342,6 +342,42 @@
             menuToggle.classList.toggle('is-active');
             navMenu.classList.toggle('active');
         });
+    </script>
+
+    <!-- Video Modal Container -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="iframe-container">
+                <iframe id="videoIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Video Modal Script
+        const watchVideoBtn = document.getElementById('watch-video-btn');
+        const videoModal = document.getElementById('videoModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const videoIframe = document.getElementById('videoIframe');
+
+        if (watchVideoBtn) {
+            watchVideoBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                videoIframe.src = "https://www.youtube.com/embed/6m6G_6XkKSc?autoplay=1";
+                videoModal.classList.add('open');
+            });
+        }
+
+        function closeModal() {
+            videoModal.classList.remove('open');
+            videoIframe.src = "";
+        }
+
+        if (modalClose) modalClose.addEventListener('click', closeModal);
+        if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
     </script>
 </body>
 </html>
