@@ -40,7 +40,9 @@
                     <li><a href="blog.html">Travel Blog</a></li>
                 </ul>
             <div class="language-switcher">
-            <a href="?lang=en" class="lang-link">English</a> | <a href="?lang=de" class="lang-link">Deutsch</a>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="de">DE</button>
+            <button id="dark-mode-toggle" class="dark-mode-btn">🌙</button>
         </div>
         </div>
     </header>
@@ -407,10 +409,28 @@
     <script>
         const menuToggle = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
-
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('is-active');
             navMenu.classList.toggle('active');
+        });
+        // Language selector buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                window.location.search = '?lang=' + btn.dataset.lang;
+            });
+        });
+        // Dark mode toggle
+        const darkToggle = document.getElementById('dark-mode-toggle');
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+        darkToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
         });
     </script>
 
