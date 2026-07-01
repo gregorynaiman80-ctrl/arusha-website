@@ -10,7 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
     <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
-    <meta name="google-site-verification" content="5r3v5iMT5059csH8qFOFcgGev62ZhcYdQtrVGw4ILCM" />
+    <meta name="description" content="Premium Arusha Safaris and Luxury Tours for international travelers. Experience high-end excursions guided by Inside Arusha.">
+    <meta name="keywords" content="Premium Arusha Safaris, Luxury Arusha Tour Guide, Premium Safari Tanzania, Luxus Arusha Tour, Luxus Safaris Arusha">
+    <meta property="og:title" content="Inside Arusha – Premium Travel Guide">
+    <meta property="og:description" content="Explore Arusha with luxury tours, premium accommodations, and exclusive experiences.">
+    <meta property="og:image" content="images/hero-placeholder.jpg">
+    <meta property="og:url" content="https://insidearusha.com/">
+    <meta name="language" content="en">
+    <meta name="author" content="Inside Arusha">
+    <link rel="alternate" hreflang="en" href="?lang=en" />
+    <link rel="alternate" hreflang="de" href="?lang=de" />
 </head>
 <body>
    <header class="site-header">
@@ -30,10 +39,9 @@
                     <li><a href="local-food.html">Local Food</a></li>
                     <li><a href="blog.html">Travel Blog</a></li>
                 </ul>
-            </nav>
-<div class="header-action">
-    <a href="https://wa.me/25574759387" target="_blank" class="btn-book">Book a Tour</a>
-</div>
+            <div class="language-switcher">
+            <a href="?lang=en" class="lang-link">English</a> | <a href="?lang=de" class="lang-link">Deutsch</a>
+        </div>
         </div>
     </header>
     <section class="hero-section">
@@ -246,7 +254,48 @@
             </div>
         </div>
     </section>
-    <section class="contact-section">
+        <!-- Booking Form with Payment Options -->
+        <section class="booking-section premium-section">
+            <h2 class="section-title">Reserve Your Luxury Experience</h2>
+            <form action="https://formspree.io/f/mnjkqjav" method="POST" class="booking-form">
+                <div class="form-group">
+                    <label for="bname">Full Name</label>
+                    <input type="text" id="bname" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="bemail">Email Address</label>
+                    <input type="email" id="bemail" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="bcountry">Country</label>
+                    <select id="bcountry" name="country" required>
+                        <option value="US">USA</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="DE">Germany</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="btour">Select Tour</label>
+                    <select id="btour" name="tour" required>
+                        <option value="safari">Premium Safari</option>
+                        <option value="food">Luxury Food Tour</option>
+                        <option value="culture">Exclusive Cultural Experience</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bdate">Preferred Date</label>
+                    <input type="date" id="bdate" name="date" required>
+                </div>
+                <div class="payment-options">
+                    <p>Secure Payment Options:</p>
+                    <button type="button" class="payment-btn paypal-btn"><i class="fa-brands fa-paypal"></i> PayPal</button>
+                    <button type="button" class="payment-btn stripe-btn"><i class="fa-brands fa-cc-stripe"></i> Stripe (Visa/Mastercard)</button>
+                    <button type="button" class="payment-btn applepay-btn"><i class="fa-brands fa-apple-pay"></i> Apple Pay</button>
+                </div>
+                <button type="submit" class="btn-submit">Complete Booking</button>
+            </form>
+        </section>
+
         <div class="section-container">
             <div class="contact-wrapper">
                 <div class="contact-info">
@@ -305,6 +354,25 @@
     </svg>
     Chat on WhatsApp
 </a>
+        <!-- Testimonial Carousel -->
+        <section class="testimonial-section">
+            <h2 class="section-title">What Our Premium Guests Say</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"An unforgettable luxury safari experience. Every detail was perfect!"</p>
+                    <p class="testimonial-author">– John D., USA</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Excellent service and exclusive access to hidden gems. Highly recommended."</p>
+                    <p class="testimonial-author">– Emma K., UK</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Ein luxuriöses Abenteuer – alles war erstklassig!"</p>
+                    <p class="testimonial-author">– Hans M., Deutschland</p>
+                </div>
+            </div>
+        </section>
+
       <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
